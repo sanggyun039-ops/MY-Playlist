@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최애 앨범 소개</title>
+    
+    <style>
+        /* 여기서부터 자유롭게 코딩을 시작하세요! */
+        /* (강사님이 주신 필수 색상 2개 잊지 마세요!) */
+
+        * {
+            margin: 0;
+            padding: auto;
+            /* 테두리 두께를 크기에 포함시키는 마법의 속성 (나중에 배웁니다!) */
+            box-sizing: border-box; 
+        }
+
+        body {
+            /* 0. 배경색과 기본 폰트 설정, 전체 여백 */
+            padding: 20px;
+            background-color: gray;
+            
+            font-size: large;
+            
+        }
+
+        /* 1. 타이포그래피 (h1, h2, .artist-name 등) 폰트, 색상, 크기, 정렬 */
+        h1{
+            color: #7fff00;
+        }
+
+
+        
+        
+        
+
+        /* 2. 가사 영역 (.lyrics-box) 및 하이라이트 글자(.highlight) 강조 */
+        .lyrics-box{
+
+            padding: auto;
+            color: #7fff00;
+
+        }
+
+        .highlight{
+
+            font-weight: 1000;
+            color: #FFFF24;
+            padding: auto;
+        }
+        /* 3. 목록(#charm-list) 불릿 기호 지우고 예쁘게 꾸미기 */
+        #charm-list{
+            list-style-type: none;
+            padding: auto;
+        }
+
+        /* 4. 표(#track-table) 한 줄 테두리(border-collapse), 패딩, 짝수줄 배경색(:nth-child) */
+
+        #track-table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        #track-table th, #track-table td{
+            border: 1px solid white;
+            padding: auto;
+            color: black;
+        }
+
+        /* 5. 버튼(.listen-btn) 꾸미고 호버(:hover) 효과 넣기 */
+
+        .listen-btn{
+
+            background-color: black;
+            padding:auto;
+            color: #7fff00;
+            font-size: large;
+            font-weight: 1000;
+        }
+
+        .listen-btn:hover{
+            background-color: #A748FF;
+        }
+    </style>
+</head>
+<body>
+    <header id="album-header">
+        <p class="artist-name">mess</p>
+        <h1>EP 4집 'Its a mess'</h1>
+        <p class="subtitle">지들만의 매력으로 가득한 플레이리스트</p>
+    </header>
+
+    <section class="lyrics-section">
+        <h2>🎵 킬링 파트 가사</h2>
+        <div class="lyrics-box">
+            <p>Time is freakin’ running out I gotta dash</p>
+            <p class="highlight">Break up the way I’m in my devil Don’t make me mad I gotta dash</p>
+            <p>Don’t make me fly for peace Never lose in this place</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>✨ 입덕 포인트</h2>
+        <ul id="charm-list">
+            <li>올드스쿨 힙합과 강한 사운드의 Pop Punk를 넘나드는 'MIXX POP'장르</li>
+            <li>본격적으로 세상의 한계와 고정관념을 부수기 위해 DASH</li>
+            <li>길이 정해져 있는 로드맵은 던져두고 어떤 Barricade든 부수고 나아가는 모습</li>
+        </ul>
+    </section>
+
+    <section class="track-section">
+        <h2>🎧 추천 플레이리스트</h2>
+        <table id="track-table">
+            <thead>
+                <tr>
+                    <th>Track</th>
+                    <th>곡명</th>
+                    <th>Play Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>USO</td>
+                    <td>3:30</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Supersonic</td>
+                    <td>4:30</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>DASH</td>
+                    <td>3:35</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Black Tesla</td>
+                    <td>2:20</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>너의 모든순간</td>
+                    <td>4:21</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </section>
+
+    <footer id="album-footer">
+        <button class="listen-btn">전곡 스밍하러 가기</button>
+    </footer>
+</body>
+</html>
