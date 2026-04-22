@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 마법 매거진</title>
+
+    <style>
+        /* 기본 설정 */
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #222;
+            --point-color: #e11d48;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Georgia', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        /* =========================
+           메인 Grid 레이아웃
+        ========================= */
+        .magazine-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 4px solid var(--border-color);
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            border-bottom: 4px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        aside {
+            padding: 10px;
+        }
+
+        main {
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            padding: 0 20px;
+        }
+
+        /* =========================
+           기사 카드 Grid
+        ========================= */
+        .article-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .magic-card {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .magic-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .magic-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* =========================
+           ticker 애니메이션
+        ========================= */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background: var(--border-color);
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .ticker-move {
+            display: inline-block;
+            white-space: nowrap;
+            animation: slide-left 10s linear infinite;
+        }
+
+        @keyframes slide-left {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* =========================
+           뱃지 애니메이션
+        ========================= */
+        .badge-new {
+            display: inline-block;
+            background: var(--point-color);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            border-radius: 12px;
+            margin-bottom: 10px;
+
+            animation: float 1.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           반응형 (모바일)
+        ========================= */
+        @media (max-width: 800px) {
+            .magazine-layout {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                grid-column: 1;
+            }
+
+            main {
+                border: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="magazine-layout">
+
+        <header>
+            <h1>🎬 나의 인생 콘텐츠 매거진</h1>
+            <p>Vol.1 | 2026.04 | 내가 좋아하는 것들 모음</p>
+        </header>
+
+        <!-- ticker -->
+        <div class="ticker-wrap" style="grid-column: 1 / -1;">
+            <div class="ticker-move">
+                🔥 [속보] 중간고사 대비 프론트엔드 핵심 정리 · 요즘 빠진 영화 리뷰 · 오늘의 추천 콘텐츠 🔥
+            </div>
+        </div>
+
+
+        <aside>
+            <h2 style="border-bottom: 2px solid var(--point-color); margin-bottom: 15px;">Profile</h2>
+            <div style="background: #fff; padding: 15px; border: 1px solid #ddd;">
+                <h4>편집장의 말</h4>
+                <p style="font-size: 0.9rem; color: #666;">
+                    제가 좋아하는 영화, 음악, 콘텐츠를 소개하는 매거진입니다.
+                </p>
+            </div>
+        </aside>
+
+
+        <main>
+            <div class="article-grid">
+
+                <article class="magic-card">
+                    <span class="badge-new">NEW</span>
+                    <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=500&fit=crop" alt="영화">
+                    <h3 style="margin: 10px 0;">내 인생 영화 TOP 1</h3>
+                    <p style="font-size: 0.9rem; color: #555;">
+                        감동과 스토리 모두 완벽했던 영화. 꼭 추천합니다.
+                    </p>
+                </article>
+
+                <article class="magic-card">
+                    <span class="badge-new" style="background:#3b82f6;">HOT</span>
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=500&fit=crop" alt="뉴스">
+                    <h3 style="margin: 10px 0;">요즘 핫한 콘텐츠</h3>
+                    <p style="font-size: 0.9rem; color: #555;">
+                        요즘 사람들이 가장 많이 보는 콘텐츠를 정리했습니다.
+                    </p>
+                </article>
+
+            </div>
+        </main>
+
+
+        <aside>
+            <h2 style="border-bottom: 2px solid var(--point-color); margin-bottom: 15px;">Ad</h2>
+            <div
+                style="background: #333; color: #fff; height: 250px; display: flex; align-items: center; justify-content: center;">
+                광고 영역
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+
+</html>
